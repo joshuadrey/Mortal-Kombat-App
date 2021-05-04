@@ -4,7 +4,7 @@ import {Component} from 'react'
 class TeamName extends Component {
     constructor(){
         super()
-        this.state = []
+        this.state = {}
     }
 
 
@@ -13,7 +13,7 @@ class TeamName extends Component {
 
     render(){
         return(
-            <p>something</p>
+            <p>TN</p>
         )
     }
 }

@@ -1,19 +1,20 @@
-import {Component} from 'react'
+import { Component } from 'react'
 
 
 class FighterList extends Component {
-    constructor(){
+    constructor() {
         super()
-        this.state = []
+        this.state = {}
     }
 
 
 
 
 
-    render(){
-        return(
-            <p>something</p>
+    render() {
+        
+        return (
+            <div></div>
         )
     }
 }

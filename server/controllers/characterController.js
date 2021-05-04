@@ -1,3 +1,4 @@
+
 let characters = [
     {
         id: 0,
@@ -204,33 +205,40 @@ let characters = [
         name: 'Jason Voorhees',
         image: 'https://static.wikia.nocookie.net/mkwikia/images/5/56/Jason_Render.png/revision/latest?cb=20150722145559'
     },
-    
-]
-// let teamName = {}
-const team = []
-let id = 1
+
+];
+let team = [];
+let id = 0;
+
 
 module.exports = {
     getCharacter: (req, res) => {
         res.status(200).send(characters)
     },
-    addCharacter: (req, res) => {
-        const {name, image} = req.body
-        const character = {
-            id,
-            name,
-            image
-        }
-        team.push(character)
+
+    getTeam:( req, res) => {
         res.status(200).send(team)
     },
+    addCharacter: (req, res) => {
+        let { name, image } = req.body
+       const character = {
+            id,
+            name,
+            image,
+        }
+    team.push({character})
+    id++;
+    console.log(image)
+        res.status(200).send(team)
+        
+    },
     deleteCharacter: (req, res) => {
-        const {id} = req.params
-        const index = team.findIndex((e) => {
+        const { id } = req.params
+        const index = characters.findIndex((e) => {
             return e.id === +id
         })
-        team.splice(index, 1)
-        res.status(200).send(team)
+        characters.splice(index, 1)
+        res.status(200).send(characters)
     },
     // editTeamName: (req, res) => {
     //     const {id} = req.pramas

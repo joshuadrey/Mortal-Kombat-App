@@ -1,6 +1,7 @@
 //Require Express
 const express = require('express')
 
+
 //Create App Instance
 const app = express()
 const PORT = 4204
@@ -13,6 +14,7 @@ app.use(express.json())
 
 //EndPoints
 app.get('/api/characters', characterCtrl.getCharacter)
+app.get('/api/team', characterCtrl.getTeam)
 app.post('/api/characters', characterCtrl.addCharacter)
 app.delete('/api/characters/:id', characterCtrl.deleteCharacter)
 // app.put('/api/characters/:id', characterCtrl.editTeamName)

@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+* { 
+  margin:  0;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,15 +15,42 @@
   }
 }
 
-Header {
-  background-color: red;
+.header {
+  background-color: black;
   height: 180px; 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: red;
+  margin: 0;
+}
+
+.inner {
+  height: 180px; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.header:hover{
+   background-image: url("https://media.krem.com/assets/KREM/images/467115771/467115771_750x422.jpg");
+}
+
+.img{
+  width: 160px;
+  height: 160px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.mortal {
+  font-size: 80px;
+}
+
+.kombat{
+  font-size: 80px;
+
 }
 
 .App-link {
@@ -36,5 +65,38 @@ Header {
     transform: rotate(360deg);
   }
 }
+
+
+.fighters{
+  background-color: orangered;
+  margin: 0;
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teams{
+  width: 30%;
+  height: 800px;
+  background-color: blue;
+}
+
+.FL{
+  background-color: blueviolet;
+  width: 60%;
+  height: 800px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+.stuff {
+  background-color: green;
+  border: solid 3px hotpink;
+}
+
+
 
 
