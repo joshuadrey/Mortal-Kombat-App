@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 
 
+
 class Team extends Component {
     constructor(props){
         super(props)
@@ -24,36 +25,28 @@ class Team extends Component {
     }
 
    
-    deleteCharacter = (id) => {
-        console.log(id);
-        axios.delete(`/api/characters/${id}`)
-        .then((res) => {
-            this.setState({teamArr: res.data})
-            console.log(res.data)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-    }
+    
 
     
 
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 
-                {this.state.teamArr.map((character) => {
+                {this.props.teamArr.map((character) => {
+                    console.log(character)
                         return (
                             <div class="stuff">
-                                <div>
+                                <div class>
                                     {
-                                        character.name
+                                        character.character.name
                                     }
-                                        <img className='team-container' src={character.image}></img>
+                                        <img className='pic-container' src={character.character.image}></img>
                                     <br></br>
                                     <br></br>
-                                <button onClick= {() => this.deleteCharacter}>Fatality</button>
+                                <button class = 'btn' onClick= {() => this.props.deleteCharacter(character.character)}>Fatality</button>
                                     
                                 </div>
                             </div>

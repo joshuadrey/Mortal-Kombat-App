@@ -32,17 +32,18 @@ class Fighters extends Component {
     }
 
     selectFighter = (name, image) => {
+        console.log(name, image)
         axios.post(`/api/characters/`, {name, image})
         .then((res) => {
-
-
-            for (let i = 0; i < this.state.fightersArr.length; i++ ){
-                if (this.state.fightersArr[i].name === name){
-                    this.state.fightersArr.splice(i, 1)
+               console.log(res.data)
+                const fightersArr = [...this.state.fightersArr]
+            for (let i = 0; i < fightersArr.length; i++ ){
+                if (fightersArr[i].name === name){
+                    fightersArr.splice(i, 1)
                 }
             }
     
-            this.setState({teamArr: res.data})
+            this.setState({teamArr: res.data, fightersArr})
             console.log(res.data)
             
         })
@@ -74,25 +75,30 @@ class Fighters extends Component {
     }
 
 
-    // handleName = (value) => {
-    //     this.setState({name: value})
-    // }
+    deleteCharacter = (char) => {
+        // console.log(id);
+        axios.delete(`/api/characters/${char.id}`)
+        .then((res) => {
+
+            this.state.fightersArr.unshift(char)
+
+            this.setState({teamArr: res.data})
+            console.log(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
 
 
-
-    // handleImage = (value) => {
-    //     this.setState({image: value})
-
-    // }
-
-
+  
 
     render() {
 
-        
+        console.log(this.state)
 
         return (
-
+      
 
             <div class='fighters'>
                 <img alt='' src={this.props.image}></img>
@@ -100,7 +106,9 @@ class Fighters extends Component {
 
 
                 <div class='FL'>
+                    <div  class= 'title1'>
                     <h2>Fighters:</h2>
+                    </div>
                     {this.state.fightersArr.map((character) => {
                         return (
                             <div class="stuff">
@@ -111,7 +119,7 @@ class Fighters extends Component {
                                         <img className='pic-container' src={character.image}></img>
                                     <br></br>
                                     <br></br>
-                                    <button onClick={() => this.selectFighter( character.name, character.image)}>Finish Him</button>
+                                    <button class = 'btn' onClick={() => this.selectFighter( character.name, character.image)}>Finish Him</button>
                                 </div>
                             </div>
                         )
@@ -120,11 +128,12 @@ class Fighters extends Component {
                 </div>
                 
                 <div class='teams'>
-                    <p>team</p>
+                    <h1 class = 'title2'>Your Team:</h1>
                     
                     <Team
                     addCharacter={this.addCharacter}
                     teamArr={this.state.teamArr}
+                    deleteCharacter={this.deleteCharacter}
                     />
                     <div>
                       

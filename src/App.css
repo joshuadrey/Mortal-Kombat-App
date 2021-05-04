@@ -78,29 +78,70 @@
 
 .teams{
   width: 30%;
-  height: 800px;
-  background-color: blue;
+  height: 2000px;
+  margin-top: 100px;
+  margin-right: 30px;
+  background-color: black;
+  border: solid 2px firebrick;
+
+}
+
+.teams:hover{
+  background-size: cover;
+  background-position-y: center ;
+  background-position-x: center ;
+  background-image: url("https://media.krem.com/assets/KREM/images/467115771/467115771_750x422.jpg");
 }
 
 .FL{
-  background-color: blueviolet;
+  background-color: black;
+  border: solid 2px firebrick;
   width: 60%;
-  height: 2200px;
+  height: 2000px;
+  margin: 0;
+  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
+.FL:hover{
+  background-size: cover;
+  background-position-y: center ;
+  background-position-x: center ;
+  background-image: url("https://media.krem.com/assets/KREM/images/467115771/467115771_750x422.jpg");
+}
+
 
 .stuff {
-  background-color: green;
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+
   border: solid 3px hotpink;
  
 }
 
 
 .pic-container{
-  height: 13vh;
-  width: 13vw;
+  height: 10vh;
+  width: 8vw;
+}
+
+.btn{
+  border: gray solid 1px;
+  box-shadow: 3px 3px,3px gray;
+}
+
+
+.title1 {
+  color: red;
+  font-size: x-large;
+}
+
+.title2 {
+color: red;
 }
 

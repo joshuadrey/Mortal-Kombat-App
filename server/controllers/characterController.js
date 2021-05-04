@@ -235,11 +235,11 @@ module.exports = {
     },
     deleteCharacter: (req, res) => {
         const { id } = req.params
-        const index = characters.findIndex((e) => {
+        const index = team.findIndex((e) => {
             return e.id === +id
         })
-        characters.splice(index, 1)
-        res.status(200).send(characters)
+        team.splice(index, 1)
+        res.status(200).send(team)
     },
     // editTeamName: (req, res) => {
     //     const {id} = req.pramas
