@@ -1,15 +1,14 @@
 import './App.css'; 
 import Header from './components/Header'
 import Fighters from './components/Fighters'
-import Team from './components/Team'
-
+import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
     <Header/>
     <Fighters/>
-   
+    <Footer/>
     </div>
   );
 }

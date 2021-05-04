@@ -12,7 +12,8 @@ class Fighters extends Component {
         super(props)
         this.state = {
             fightersArr: [],
-            teamArr: []
+            teamArr: [],
+            teamName: ''
         }
     }
 
@@ -76,13 +77,24 @@ class Fighters extends Component {
 
 
     deleteCharacter = (char) => {
-        // console.log(id);
+        console.log(char)
         axios.delete(`/api/characters/${char.id}`)
         .then((res) => {
 
             this.state.fightersArr.unshift(char)
 
             this.setState({teamArr: res.data})
+            console.log(res.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
+    editName = (teamName) => {
+        axios.put(`/api/characters/`, {teamName})
+        .then((res) => {
+            this.setState({teamName: res.data})
             console.log(res.data)
         })
         .catch((err) => {
@@ -128,8 +140,9 @@ class Fighters extends Component {
                 </div>
                 
                 <div class='teams'>
-                    <h1 class = 'title2'>Your Team:</h1>
-                    
+
+                <p class = 'title2'>{this.state.teamName}</p>
+                    <button class = 'btn'  onClick= {() => this.editName('Your Team!')}>Click</button>
                     <Team
                     addCharacter={this.addCharacter}
                     teamArr={this.state.teamArr}
@@ -140,10 +153,7 @@ class Fighters extends Component {
                     </div>
                 
                 
-                {/* <FighterList /> */}
-                {/* <Team /> */}
-                {/* <TeamName /> */}
-                {/* <Character/> */}
+               
 
             </div>
             </div>

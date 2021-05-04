@@ -17,6 +17,6 @@ app.get('/api/characters', characterCtrl.getCharacter)
 app.get('/api/team', characterCtrl.getTeam)
 app.post('/api/characters', characterCtrl.addCharacter)
 app.delete('/api/characters/:id', characterCtrl.deleteCharacter)
-// app.put('/api/characters/:id', characterCtrl.editTeamName)
+app.put('/api/characters/', characterCtrl.editTeamName)
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`))

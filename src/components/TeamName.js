@@ -1,23 +1,23 @@
-import {Component} from 'react'
+// import {Component} from 'react'
 
 
-class TeamName extends Component {
-    constructor(){
-        super()
-        this.state = {}
-    }
-
-
-
-
-
-    render(){
-        return(
-            <p>TN</p>
-        )
-    }
-}
+// class TeamName extends Component {
+//     constructor(){
+//         super()
+//         this.state = {}
+//     }
 
 
 
-export default TeamName
+
+
+//     render(){
+//         return(
+           
+//         )
+//     }
+// }
+
+
+
+// export default TeamName
