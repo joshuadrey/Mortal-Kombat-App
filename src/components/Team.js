@@ -1,13 +1,26 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import axios from 'axios'
 
 
 class Team extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            teamArr:{}
+            teamArr:[]
         }
+    }
+
+
+    componentDidMount() {
+        axios.get('/api/team')
+            .then((res) => {
+                this.setState({ teamArr: res.data })
+                console.log(res.data)
+
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
    
@@ -23,11 +36,30 @@ class Team extends Component {
         })
     }
 
+    
+
 
     render(){
         return(
             <div>
-                <h2>Your Team:</h2>
+                
+                {this.state.teamArr.map((character) => {
+                        return (
+                            <div class="stuff">
+                                <div>
+                                    {
+                                        character.name
+                                    }
+                                        <img className='team-container' src={character.image}></img>
+                                    <br></br>
+                                    <br></br>
+                                <button onClick= {() => this.deleteCharacter}>Fatality</button>
+                                    
+                                </div>
+                            </div>
+                        )
+                    })}
+
             </div>
             
         )

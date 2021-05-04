@@ -1,6 +1,7 @@
 import './App.css'; 
 import Header from './components/Header'
 import Fighters from './components/Fighters'
+import Team from './components/Team'
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
     <Header/>
     <Fighters/>
-    
+   
     </div>
   );
 }

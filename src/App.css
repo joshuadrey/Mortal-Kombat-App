@@ -70,7 +70,7 @@
 .fighters{
   background-color: orangered;
   margin: 0;
-  height: 800px;
+  height: 2200px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -85,7 +85,7 @@
 .FL{
   background-color: blueviolet;
   width: 60%;
-  height: 800px;
+  height: 2200px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -95,8 +95,12 @@
 .stuff {
   background-color: green;
   border: solid 3px hotpink;
+ 
 }
 
 
-
+.pic-container{
+  height: 13vh;
+  width: 13vw;
+}
 
